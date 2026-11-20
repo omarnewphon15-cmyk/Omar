@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#08090d">
+<title>Omar | Social Links</title>
+<style>
+:root{color-scheme:dark;--bg:#08090d;--panel:#11131b;--line:#242735;--muted:#a1a5b5;--white:#f7f8fc;--accent:#a78bfa}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% 0%,#24203d 0%,#10111a 36%,var(--bg) 75%);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;color:var(--white);display:grid;place-items:center;padding:28px 16px}
+main{width:min(100%,440px);text-align:center}.topline{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#aaa6c4;margin-bottom:25px}
+.avatar{width:112px;height:112px;border-radius:50%;margin:0 auto 18px;border:2px solid #7463ad;padding:4px;background:#191827;box-shadow:0 0 40px #8b5cf633;overflow:hidden;display:grid;place-items:center}
+.avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:none}.initial{font-size:38px;font-weight:750;color:#d8ccff}
+h1{font-size:36px;letter-spacing:-.04em;margin:0}.sub{color:var(--muted);font-size:14px;margin:8px 0 25px}.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid #343044;background:#171522;border-radius:999px;padding:8px 13px;font-size:11px;color:#d8d0f5;letter-spacing:.04em;margin-bottom:25px}
+.dot{width:7px;height:7px;background:#8ee6b1;border-radius:50%;box-shadow:0 0 10px #8ee6b1}
+.links{display:grid;gap:11px}.link{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--white);background:linear-gradient(110deg,#171923,#11131b);border:1px solid var(--line);border-radius:16px;padding:15px 17px;transition:.2s;min-height:62px}.link:hover{transform:translateY(-2px);border-color:#7665a8;background:#1a1926}.icon{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;font-size:17px;font-weight:800;background:#242333}.label{font-weight:650;font-size:14px}.handle{display:block;color:var(--muted);font-size:11px;margin-top:2px;text-align:left}.arrow{margin-left:auto;color:#777b8e;font-size:20px}
+footer{color:#74788a;font-size:11px;margin-top:27px;letter-spacing:.08em}
+.edit{margin-top:23px;background:transparent;border:1px solid #343747;color:#c6c8d2;padding:9px 13px;border-radius:10px;font-size:11px;cursor:pointer}.edit:hover{border-color:#a78bfa;color:white}
+@media(prefers-reduced-motion:reduce){.link{transition:none}}
+</style>
+</head>
+<body>
+<main>
+  <div class="topline">DIGITAL IDENTITY</div>
+  <div class="avatar"><span class="initial" id="initial">O</span><img id="photo" alt="Omar profile photo"></div>
+  <h1>Omar</h1>
+  <p class="sub">Find me on social media</p>
+  <div class="pill"><span class="dot"></span> ALL MY LINKS IN ONE PLACE</div>
+  <section class="links" aria-label="Social media links">
+    <a class="link" href="https://www.instagram.com/omar_w_2010?avpt=MWY3bzNvNWdxZWplYw==" target="_blank" rel="noopener"><span class="icon">◎</span><span><span class="label">Instagram</span><span class="handle">@omar_w_2010</span></span><span class="arrow">↗</span></a>
+    <a class="link" href="https://www.tiktok.com/@omar.waheed010?_r=1&_t=ZS-9BZODwnPn85" target="_blank" rel="noopener"><span class="icon">♪</span><span><span class="label">TikTok</span><span class="handle">@omar.waheed010</span></span><span class="arrow">↗</span></a>
+    <a class="link" href="https://www.facebook.com/share/1CPqk9Loz1/" target="_blank" rel="noopener"><span class="icon">f</span><span><span class="label">Facebook</span><span class="handle">My Facebook profile</span></span><span class="arrow">↗</span></a>
+    <a class="link" href="https://wa.me/qr/7DLHUJEEY7NKP1" target="_blank" rel="noopener"><span class="icon">◉</span><span><span class="label">WhatsApp</span><span class="handle">Message me</span></span><span class="arrow">↗</span></a>
+    <a class="link" href="https://www.snapchat.com/add/omar-waheed205?share_id=kF8VfRg9_uQ&locale=en-EG" target="_blank" rel="noopener"><span class="icon">👻</span><span><span class="label">Snapchat</span><span class="handle">omar-waheed205</span></span><span class="arrow">↗</span></a>
+  </section>
+  <button class="edit" id="photoButton" type="button">＋ Add profile photo</button>
+  <input id="photoInput" type="file" accept="image/*" hidden>
+  <footer>SCAN • CONNECT • SAY HELLO</footer>
+</main>
+<script>
+const input=document.getElementById('photoInput');
+document.getElementById('photoButton').addEventListener('click',()=>input.click());
+input.addEventListener('change',()=>{const file=input.files&&input.files[0];if(!file)return;const img=document.getElementById('photo');img.src=URL.createObjectURL(file);img.style.display='block';document.getElementById('initial').style.display='none';document.getElementById('photoButton').textContent='✓ Photo added (preview only)';});
+</script>
+</body>
+</html>
